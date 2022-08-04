@@ -5,6 +5,7 @@ export default async function signUpController(req, res){
     const body = req.body;
 
     try{
+        // validation steps
         const searchQuery = 'SELECT email FROM users WHERE email = $1;';
         const bindParams = [body.email];
         const queryResult = await connection.query(searchQuery, bindParams);
@@ -14,6 +15,7 @@ export default async function signUpController(req, res){
         if(!isValidEmail){
             return res.status(409).send('Conflict: email already registered.')
         } else {
+            // controllers steps
             const newPassword = passwordEncrypter(body.password);
             const insertQuery = 'INSERT INTO users (name, email, password) VALUES ($1, $2, $3);';
             const bindParams = [body.name, body.email, newPassword];

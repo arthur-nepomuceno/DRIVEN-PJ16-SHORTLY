@@ -9,6 +9,7 @@ export default async function signInController(req, res){
     const jwt = jsonwebtoken;
 
     try{
+        //validaton steps
         const searchQuery = 'SELECT * FROM users WHERE email = $1;';
         const bindParams = [body.email];
         const queryResult = await connection.query(searchQuery, bindParams);
@@ -25,6 +26,8 @@ export default async function signInController(req, res){
             }            
         }
         
+        //controller steps. 
+        //add info on database before sending token
         delete queryData.password;
         const SECRET_KEY = process.env.JWT_SECRET;
         const token = jwt.sign(queryData, SECRET_KEY);
