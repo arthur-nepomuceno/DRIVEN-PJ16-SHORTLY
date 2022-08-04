@@ -8,9 +8,10 @@ export default async function signUpController(req, res){
         const searchQuery = 'SELECT email FROM users WHERE email = $1;';
         const bindParams = [body.email];
         const queryResult = await connection.query(searchQuery, bindParams);
-        const data = queryResult.rows;
+        const queryData = queryResult.rows;
+        const isValidEmail = queryData.length === 0;
         
-        if(data.length !== 0){
+        if(!isValidEmail){
             return res.status(409).send('Conflict: email already registered.')
         } else {
             const newPassword = passwordEncrypter(body.password);
