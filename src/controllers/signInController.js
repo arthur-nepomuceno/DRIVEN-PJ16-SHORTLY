@@ -30,7 +30,7 @@ export default async function signInController(req, res){
         //add info on database before sending token
         delete queryData.password;
         const SECRET_KEY = process.env.JWT_SECRET;
-        const token = jwt.sign(queryData, SECRET_KEY);
+        const token = jwt.sign(queryData, SECRET_KEY, {expiresIn: '15 minutes'});
         return res.status(200).send({token: token});
 
     } catch(error){
