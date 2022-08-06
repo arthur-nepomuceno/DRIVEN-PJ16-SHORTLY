@@ -9,11 +9,11 @@ export default async function getUrlById(req, res){
         const {rows: queryResult} = await connection.query(getQuery, bindParams);
         
         if(queryResult.length === 0){
-            res.sendStatus(404);
+            return res.sendStatus(404);
         } else {
-            res.status(200).send(...queryResult);
+            return res.status(200).send(...queryResult);
         }
     } catch(error){
-        res.status(500).send(error);
+        return res.status(500).send(error);
     }
 }
