@@ -1,10 +1,10 @@
-import jsonwebtoken from "jsonwebtoken";
-import { nanoid } from "nanoid";
-import connection from '../dbStrategy/postgres.js'
+import jsonwebtoken from 'jsonwebtoken';
+import { nanoid } from 'nanoid';
+import connection from '../../dbStrategy/postgres.js';
 import dotenv from 'dotenv';
 dotenv.config();
 
-export default async function urlShortenController(req, res){
+export default async function postUrl(req, res){
     const body = req.body;
     const authorization = req.headers.authorization;
     const token = authorization.replace(/Bearer |'/g, '');

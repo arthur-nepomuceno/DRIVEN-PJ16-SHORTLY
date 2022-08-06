@@ -1,7 +1,7 @@
-import connection from '../dbStrategy/postgres.js';
-import passwordEncrypter from '../utilities/passwordEncrypter.js';
+import connection from '../../dbStrategy/postgres.js';
+import passwordEncrypter from '../../utilities/passwordEncrypter.js';
 
-export default async function signUpController(req, res){
+export default async function postSignUp(req, res){
     const body = req.body;
 
     try{

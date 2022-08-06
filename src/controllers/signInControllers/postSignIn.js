@@ -1,10 +1,10 @@
-import connection from '../dbStrategy/postgres.js';
-import passwordDecrypter from '../utilities/passwordDecrypter.js';
+import connection from '../../dbStrategy/postgres.js';
+import passwordDecrypter from '../../utilities/passwordDecrypter.js';
 import jsonwebtoken from 'jsonwebtoken';
 import dotenv from 'dotenv';
 dotenv.config()
 
-export default async function signInController(req, res){
+export default async function postSignIn(req, res){
     const body = req.body;
     const jwt = jsonwebtoken;
 
