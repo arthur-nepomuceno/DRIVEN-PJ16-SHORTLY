@@ -30,8 +30,9 @@ export default async function deleteUrlById(req, res){
     const bindParams = [id];
     try{
         const {rows: queryResult} = await connection.query(getQuery, bindParams);
+        const isValidUser = queryResult.length !== 0;
         
-        if(queryResult.length === 0){
+        if(!isValidUser){
             return res.sendStatus(404);
         }
 
