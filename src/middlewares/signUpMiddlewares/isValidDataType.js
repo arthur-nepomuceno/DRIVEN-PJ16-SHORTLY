@@ -19,6 +19,7 @@ export default function isValidDataType(req, res, next){
             return res.status(422).send('Please, confirm password correctly.')
         }
     } else {
+        res.locals.body = body;
         next();
     }
 }
