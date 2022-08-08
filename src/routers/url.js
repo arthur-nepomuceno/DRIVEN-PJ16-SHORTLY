@@ -5,7 +5,7 @@ import getShortUrl from "../controllers/url/getShortUrl.js";
 import deleteUrlById from "../controllers/url/deleteUrlById.js";
 import isValidUrl from "../middlewares/url/isValidUrl.js";
 import isValidUrlId from "../middlewares/url/isValidUrlId.js";
-import isValidToken from "../middlewares/url/isValidToken.js";
+import isValidToken from "../middlewares/token/isValidToken.js";
 import isValidShortUrl from "../middlewares/url/isValidShortUrl.js";
 import isUrlFromUser from "../middlewares/url/isUrlFromUser.js";
 
