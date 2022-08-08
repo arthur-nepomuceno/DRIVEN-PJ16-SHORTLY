@@ -7,12 +7,16 @@ import isValidUrl from "../middlewares/url/isValidUrl.js";
 import isValidUrlId from "../middlewares/url/isValidUrlId.js";
 import isValidToken from "../middlewares/url/isValidToken.js";
 import isValidShortUrl from "../middlewares/url/isValidShortUrl.js";
+import isUrlFromUser from "../middlewares/url/isUrlFromUser.js";
 
 const urlRouter = Router();
 
 urlRouter.post('/urls/shorten', isValidUrl, isValidToken, postShortUrl);
+
 urlRouter.get('/urls/:id', isValidUrlId ,getUrlById);
+
 urlRouter.get('/urls/open/:shortUrl', isValidShortUrl ,getShortUrl)
-urlRouter.delete('/urls/:id', deleteUrlById);
+
+urlRouter.delete('/urls/:id', isValidUrlId ,isValidToken, isUrlFromUser ,deleteUrlById);
 
 export default urlRouter;
