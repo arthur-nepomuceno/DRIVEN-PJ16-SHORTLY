@@ -1,6 +1,6 @@
 import { Router } from "express";
-import getUserData from "../controllers/userControllers/getUserData.js";
-import getRanking from "../controllers/userControllers/getRanking.js";
+import getUserData from "../controllers/user/getUserData.js";
+import getRanking from "../controllers/user/getRanking.js";
 
 const userRouter = Router();
 

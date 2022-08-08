@@ -1,4 +1,4 @@
-import queryIsValidEmail from '../../repository/signInRepository/queryIsValidEmail.js';
+import queryIsValidEmail from '../../repository/signIn/queryIsValidEmail.js';
 import passwordDecrypter from '../../utilities/passwordDecrypter.js';
 
 export default async function isValidEmail(req, res, next){

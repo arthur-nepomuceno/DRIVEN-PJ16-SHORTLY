@@ -1,7 +1,7 @@
 import connection from "../../dbStrategy/postgres.js";
 
 export default async function queryGetRanking(){
-    const getQuery = `SELECT  users.id, 
+    const query = `SELECT  users.id, 
                               users.name, 
                               COUNT("userId") AS "linksCount", 
                               COALESCE(SUM("visitCount"), 0) AS "visitCount" 
@@ -12,5 +12,5 @@ export default async function queryGetRanking(){
                       ORDER BY "visitCount" DESC
                       LIMIT 10;`
 
-    return connection.query(getQuery);
+    return connection.query(query);
 }

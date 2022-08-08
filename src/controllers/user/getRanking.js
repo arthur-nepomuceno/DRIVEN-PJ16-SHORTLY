@@ -1,4 +1,4 @@
-import queryGetRanking from '../../repository/userRepository/queryGetRanking.js';
+import queryGetRanking from '../../repository/user/queryGetRanking.js';
 
 export default async function getRanking(req, res){                               
     try{

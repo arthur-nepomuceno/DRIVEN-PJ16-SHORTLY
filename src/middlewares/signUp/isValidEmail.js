@@ -1,4 +1,4 @@
-import queryIsValidEmail from "../../repository/signUpRepository/queryIsValidEmail.js";
+import queryIsValidEmail from "../../repository/signUp/queryIsValidEmail.js";
 
 export default async function isValidEmail(req, res, next){
 
