@@ -1,8 +1,8 @@
 import { Router } from 'express';
-import signUpRouter from './signUpRouter.js';
-import signInRouter from './signInRouter.js';
-import urlRouter from './urlRouter.js';
-import userRouter from './userRouter.js';
+import signUpRouter from './signUp.js';
+import signInRouter from './signIn.js';
+import urlRouter from './url.js';
+import userRouter from './user.js';
 
 const router = Router();
 

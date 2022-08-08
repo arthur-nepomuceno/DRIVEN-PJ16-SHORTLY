@@ -1,4 +1,4 @@
-import queryInsertEmail from "../../repository/signUpRepository/queryInsertEmail.js";
+import queryInsertEmail from "../../repository/signUp/queryInsertEmail.js";
 
 export default async function postSignUp(req, res){
     const body = res.locals.body;

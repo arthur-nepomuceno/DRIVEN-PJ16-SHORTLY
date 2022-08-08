@@ -1,5 +1,5 @@
 import { nanoid } from 'nanoid';
-import queryInsertShortUrl from '../../repository/urlRepository/queryInsertShortUrl.js';
+import queryInsertShortUrl from '../../repository/url/queryInsertShortUrl.js';
 
 export default async function postShortUrl(req, res){
 
