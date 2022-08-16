@@ -7,7 +7,7 @@ export default async function isValidEmail(req, res, next){
     try{
         const {rows: queryResult} = await queryIsValidEmail(body);
 
-        const isValidEmail = queryResult[0].length === 0;   
+        const isValidEmail = queryResult.length === 0;   
              
         if(isValidEmail === false){
             
